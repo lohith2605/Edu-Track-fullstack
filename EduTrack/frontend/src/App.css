@@ -1,0 +1,263 @@
+/* Modernized EduTrack styles */
+
+/* Dark Theme (default) */
+.theme-dark {
+  --bg: #071028;
+  --text: #e6eef8;
+  --card: rgba(255,255,255,0.03);
+  --accent: #4f46e5;
+  --muted: #94a3b8;
+  --glass: rgba(255,255,255,0.03);
+  --glass-2: rgba(255,255,255,0.02);
+  --accent-2: #06b6d4;
+}
+
+/* Light Theme */
+.theme-light {
+  --bg: #f7fafc;
+  --text: #0f1724;
+  --card: #ffffff;
+  --accent: #4f46e5;
+  --muted: #6b7280;
+  --glass: rgba(0,0,0,0.03);
+  --glass-2: rgba(0,0,0,0.02);
+  --accent-2: #06b6d4;
+}
+
+/* page layout */
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.et-header {
+  background: linear-gradient(90deg, var(--glass), transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--glass);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.et-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 12px 20px;
+  gap: 16px;
+}
+
+.et-logo {
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.et-nav {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.et-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.et-nav a:hover {
+  color: var(--text);
+  background: var(--glass-2);
+}
+
+.et-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.et-login-btn {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.12);
+}
+
+.et-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.et-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: var(--glass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--text);
+  box-shadow: 0 4px 12px rgba(2, 6, 23, 0.6);
+}
+
+.et-username {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.et-main {
+  padding: 28px 20px;
+  min-height: calc(100vh - 160px);
+}
+
+.et-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.et-footer {
+  text-align: center;
+  padding: 18px 8px;
+  color: var(--muted);
+  font-size: 13px;
+  border-top: 1px solid var(--glass-2);
+  margin-top: 30px;
+}
+
+/* cards */
+.et-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+  border: 1px solid var(--glass);
+}
+
+/* buttons */
+.btn {
+  background: var(--accent);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--glass);
+  color: var(--muted);
+}
+
+/* forms */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  background: transparent;
+  border: 1px solid var(--glass);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 8px;
+  outline: none;
+}
+
+input:focus {
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.08);
+  border-color: rgba(79, 70, 229, 0.6);
+}
+
+/* dashboard grid */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .et-header-inner {
+    padding: 12px;
+  }
+  .et-nav {
+    display: none;
+  }
+  .et-username {
+    display: none;
+  }
+}
+
+/* toast */
+.et-toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+  cursor: pointer;
+  z-index: 50;
+}
+
+.et-toast-info {
+  background: linear-gradient(90deg, #0ea5a4, #38bdf8);
+  color: #05283a;
+}
+
+.et-toast-success {
+  background: linear-gradient(90deg, #10b981, #34d399);
+  color: #05283a;
+}
+
+.et-toast-error {
+  background: linear-gradient(90deg, #ef4444, #f97316);
+  color: white;
+}
+
+/* subtle animations */
+.fade-in {
+  animation: fadeIn 0.45s ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
