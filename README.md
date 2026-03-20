@@ -138,11 +138,4 @@ Gemini (Frontend)
 📦 Ready for deployment or presentation
 📚 Easy to extend with features like attendance marking, analytics, and notifications
 
-yaml
-Copy code
 
----
-
-Once you paste this into your root `README.md`, you’re done ✅
-
-Would you like a reminder on how to zip everything for final submission?
